@@ -19,12 +19,12 @@ class MainActivity : AppCompatActivity() {
     private fun showToastWithObjectInformation() {
         val obj = User.getData()
         val cutomObj = obj.copy("AnyName", 100)
-        Toast.makeText(this, "Default username: " + cutomObj.Name + "\nDefault age: " + cutomObj.Age, Toast.LENGTH_LONG)
+        Toast.makeText(this, "Default username: ${cutomObj.Name} Default age: ${cutomObj.Age}", Toast.LENGTH_LONG).show()
     }
 
     private fun initView() {
         val user = UsersData("Dmitry",23)
-        findViewById<Button>(R.id.button).setOnClickListener { v -> findViewById<TextView>(R.id.textView).setText("Custom username: " + user.Name + "\nCustom age: " + user.Age) }
+        findViewById<Button>(R.id.button).setOnClickListener { v -> findViewById<TextView>(R.id.textView).setText("Custom username: ${user.Name} Custom age: ${user.Age}") }
 
         showToastWithObjectInformation()
 
