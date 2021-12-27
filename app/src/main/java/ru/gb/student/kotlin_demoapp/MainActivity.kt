@@ -6,12 +6,17 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import ru.gb.student.kotlin_demoapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.getRoot()
+        setContentView(view)
 
         initView()
     }
@@ -37,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         for (i in 25 downTo 1 step 5){
-            println("step " + i)
+            println("step $i")
         }
     }
 }
